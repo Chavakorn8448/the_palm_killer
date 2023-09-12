@@ -22,6 +22,12 @@ print(f"\nListening for 'a' key press on device: {keyboard.name}")
 
 # Infinite loop to check for key events
 for event in keyboard.read_loop():
-    # Check if a key is pressed down and if it's the 'a' key
-    if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_A:
-        print("'a' key pressed!")
+    # Check if a key is pressed down and if it's the '1' key
+    if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_1:
+        print("'1' key pressed!")
+    if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_2:
+        print("'1' key pressed!")
+    if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_3:
+        print("'1' key pressed!")
+    if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_4:
+        print("'1' key pressed!")
