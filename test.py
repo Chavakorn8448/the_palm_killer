@@ -10,14 +10,18 @@ if not keyboard_devices:
     print("No keyboards found!")
     exit()
 
+# Print all detected keyboard devices
+print("Detected keyboard devices:")
+for idx, kbd in enumerate(keyboard_devices, 1):
+    print(f"{idx}. {kbd.name}")
+
 # Use the first keyboard found. You might need to adjust this if you have multiple keyboard devices.
 keyboard = keyboard_devices[0]
 
-print(f"Listening for 'a' key press on device: {keyboard.name}")
+print(f"\nListening for 'a' key press on device: {keyboard.name}")
 
 # Infinite loop to check for key events
 for event in keyboard.read_loop():
     # Check if a key is pressed down and if it's the 'a' key
     if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_A:
         print("'a' key pressed!")
-        # Do your logic here, like appending data to a directory
