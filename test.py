@@ -12,7 +12,7 @@ if not keyboard_devices:
 
 # Use the first keyboard found. You might need to adjust this if you have multiple keyboard devices.
 print(keyboard_devices)
-keyboard = keyboard_devices[0]
+keyboard = 'Logitech USB Keyboard'
 
 print(f"Listening for 'a' key press on device: {keyboard.name}")
 
