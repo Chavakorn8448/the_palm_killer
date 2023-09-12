@@ -18,7 +18,7 @@ for idx, kbd in enumerate(keyboard_devices, 1):
 # Use the first keyboard found. You might need to adjust this if you have multiple keyboard devices.
 keyboard = keyboard_devices[2]
 
-print(f"\nListening for 'a' key press on device: {keyboard.name}")
+print(f"\nListening for key press on device: {keyboard.name}")
 
 # Infinite loop to check for key events
 for event in keyboard.read_loop():
@@ -26,8 +26,8 @@ for event in keyboard.read_loop():
     if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_1:
         print("'1' key pressed!")
     if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_2:
-        print("'1' key pressed!")
+        print("'2' key pressed!")
     if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_3:
-        print("'1' key pressed!")
+        print("'3' key pressed!")
     if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_4:
-        print("'1' key pressed!")
+        print("'4' key pressed!")
