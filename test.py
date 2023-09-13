@@ -22,7 +22,7 @@ keyboard = keyboard_devices[2]
 print(f"\nListening for key press on device: {keyboard.name}")
 
 directory = os.path.abspath('test.py')
-
+print(directory)
 unripe = os.path.join(directory, 'unripe')
 almost_ripe = os.path.join(directory, 'almost_ripe')
 ripe = os.path.join(directory, 'ripe')
