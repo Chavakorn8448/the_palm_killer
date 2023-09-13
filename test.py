@@ -5,12 +5,11 @@ import os
 # Search for the device. In this example, we're looking for keyboards.
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 keyboard_devices = [device for device in devices if 'keyboard' in device.name.lower()]
-print('1')
 
 # If no keyboards are found, exit.
 if not keyboard_devices:
      print("No keyboards found!")
-exit()
+     exit()
 
 # Print all detected keyboard devices
 print("Detected keyboard devices:")
@@ -22,7 +21,7 @@ keyboard = keyboard_devices[2]
 
 print(f"\nListening for key press on device: {keyboard.name}")
 
-directory = os.path.abspath("\home\pi\the_palm_killer")
+directory = os.path.abspath("/home/pi/the_palm_killer")
 
 unripe = os.path.join(directory, 'unripe')
 almost_ripe = os.path.join(directory, 'almost_ripe')
