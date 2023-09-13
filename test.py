@@ -78,5 +78,5 @@ for event in keyboard.read_loop():
      if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_4:
           print("'4' key pressed!")
           os.chdir(too_ripe)
-          with open('too_ripe.txt', 'a'):
+          with open('too_ripe.txt', 'a') as f:
                f.write('4') # write the data recieve
