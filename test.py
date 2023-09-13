@@ -64,19 +64,19 @@ for event in keyboard.read_loop():
           print("'1' key pressed!")
           os.chdir(unripe)
           with open('unripe.txt', 'a') as f:
-               f.write('1') # write the data recieve
+               f.write('1\n') # write the data recieve
      if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_2:
           print("'2' key pressed!")
           os.chdir(almost_ripe)
           with open('almost_ripe.txt', 'a') as f:
-               f.write('2') # write the data recieve
+               f.write('2\n') # write the data recieve
      if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_3:
           print("'3' key pressed!")
           os.chdir(ripe)
           with open('ripe.txt', 'a') as f:
-               f.write('3') # write the data recieve
+               f.write('3\n') # write the data recieve
      if event.type == ecodes.EV_KEY and event.value == 1 and event.code == ecodes.KEY_4:
           print("'4' key pressed!")
           os.chdir(too_ripe)
           with open('too_ripe.txt', 'a') as f:
-               f.write('4') # write the data recieve
+               f.write('4\n') # write the data recieve
