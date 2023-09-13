@@ -5,6 +5,7 @@ import os
 # Search for the device. In this example, we're looking for keyboards.
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 keyboard_devices = [device for device in devices if 'keyboard' in device.name.lower()]
+print('1')
 
 # If no keyboards are found, exit.
 if not keyboard_devices:
