@@ -21,7 +21,7 @@ keyboard = keyboard_devices[2]
 
 print(f"\nListening for key press on device: {keyboard.name}")
 
-directory = os.path.abspath("/home/pi/the_palm_killer")
+directory = os.path.abspath("/home/traffy/the_palm_killer")
 
 unripe = os.path.join(directory, 'unripe')
 almost_ripe = os.path.join(directory, 'almost_ripe')
