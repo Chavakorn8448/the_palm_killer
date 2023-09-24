@@ -1,21 +1,34 @@
-from sklearn.datasets import load_iris
+import os
 
-iris = load_iris()
-X = iris.data
-y = iris.target
+def get_only_filename(files):
+    lst_file = []
+    for file in files:
+        lst_file.append(file.split('.')[0])
+    return lst_file
 
-from sklearn.model_selection import train_test_split
+def get_highest_numbered_file(path):
+    try:
+        # List all files in the directory
+        files = os.listdir(path)
+        print(files)
+        new_files = get_only_filename(files)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        # Filter out filenames that aren't numbers and convert them to integers
+        numbers = [int(f) for f in new_files if f.isdigit()]
+        print(numbers)
 
-from sklearn.tree import DecisionTreeClassifier
+        # Return the highest number
+        return max(numbers)
 
-clf = DecisionTreeClassifier()
-clf.fit(X_train, y_train)
+    except ValueError:
+        # This is raised if there are no numeric files and max() is called on an empty list
+        return None
 
-from sklearn.metrics import accuracy_score
+# Replace with the path to your directory
+directory_path = 'C:/Users/arunk/OneDrive/Documents/CMKL/the_palm_killer/test'
 
-y_pred = clf.predict(X_test)
-print(y_pred, '\n', y_test)
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy * 100:.2f}%")
+highest_number = get_highest_numbered_file(directory_path)
+if highest_number is not None:
+    print(f"The highest numbered file is: {highest_number}")
+else:
+    print("No numeric file names found in the directory.")
