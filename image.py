@@ -14,7 +14,7 @@ def create_image(number):
     image = Image.new('RGB', (width, height), color)
 
     # Save the image as a .jpg file
-    image.save(number, '.jpg')
+    image.save(str(number) + '.jpg')
 
 # get last file number
 def get_only_filename(files):
@@ -27,12 +27,10 @@ def get_highest_numbered_file(path):
     try:
         # List all files in the directory
         files = os.listdir(path)
-        print(files)
         new_files = get_only_filename(files)
 
         # Filter out filenames that aren't numbers and convert them to integers
         numbers = [int(f) for f in new_files if f.isdigit()]
-        print(numbers)
 
         # Return the highest number
         return max(numbers)
