@@ -38,6 +38,22 @@ def get_highest_numbered_file(path):
     except ValueError:
         # This is raised if there are no numeric files and max() is called on an empty list
         return None
+    
+def crop_image(image):
+    if image.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+        # Calculate the middle region to crop
+        width, height = image.size
+        new_width, new_height = width // 2, height // 2
+        left = (width - new_width) / 2
+        top = (height - new_height) / 2
+        right = (width + new_width) / 2
+        bottom = (height + new_height) / 2
+
+        # Crop the middle of the image
+        cropped_image = image.crop((left, top, right, bottom))
+
+        # Save the cropped image to the destination folder
+        return cropped_image
 
 # Search for the device. In this example, we're looking for keyboards.
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
