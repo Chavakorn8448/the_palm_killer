@@ -13,7 +13,7 @@ def take_pic(path, filename):
     time.sleep(2)
     metadata = picam2.capture_file("/home/traffy/the_palm_killer/" + path + "/" + str(filename) + ".jpg")
     picam2.close()
-    print("captured")
+    print(str(filename)+ "of" + path + "is captured")
 
 # get last file number
 def get_only_filename(files):
@@ -53,7 +53,7 @@ for idx, kbd in enumerate(keyboard_devices, 1):
     print(f"{idx}. {kbd.name}")
 
 # Use the first keyboard found. You might need to adjust this if you have multiple keyboard devices.
-keyboard = keyboard_devices[2]
+keyboard = keyboard_devices[0]
 
 print(f"\nListening for key press on device: {keyboard.name}")
 
