@@ -4,7 +4,6 @@ import os
 from PIL import Image
 from picamera2 import Picamera2, Preview
 import time
-from PIL import Image
 
 def take_pic(path, filename):
     picam2 = Picamera2()
@@ -14,6 +13,16 @@ def take_pic(path, filename):
     metadata = picam2.capture_file("/home/traffy/the_palm_killer/" + path + "/" + str(filename) + ".jpg")
     picam2.close()
     print(str(filename)+ "of" + path + "is captured")
+
+def change_color(image):
+    image = Image.open(image)
+    r, g, b = image.split()
+
+    r = r.point(lambda p: p * 0.9)
+    g = g.point(lambda p: p * 1.1)
+    b = b.point(lambda p: p * 1.1)
+    new_image = image.merge('RGB', (r, g, b))
+    return new_image
 
 # get last file number
 def get_only_filename(files):
